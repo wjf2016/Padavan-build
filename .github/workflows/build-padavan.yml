@@ -2,17 +2,16 @@
 name: Build Padavan
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
   push:
-    tags:
-      - "v*"
-  #  branches:
-  #    - master
+    branches:
+      - master
   #  schedule:
   #    - cron: 0 8 * * 5
   watch:
-    types: [push, started]
+    types: [started]
 
 jobs:
   build:
